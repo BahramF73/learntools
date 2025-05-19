@@ -7,8 +7,8 @@ from sklearn.model_selection import train_test_split
 from learntools.core import *
 
 # Load the data
-X = pd.read_csv('../input/train.csv', index_col='Id')
-X_test_full = pd.read_csv('../input/test.csv', index_col='Id')
+X = pd.read_csv('train.csv', index_col='Id')
+X_test_full = pd.read_csv('test.csv', index_col='Id')
 X.dropna(axis=0, subset=['SalePrice'], inplace=True)
 y = X.SalePrice
 X.drop(['SalePrice'], axis=1, inplace=True)
