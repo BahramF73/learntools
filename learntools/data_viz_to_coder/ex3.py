@@ -7,7 +7,7 @@ import warnings
 from learntools.core import *
 
 warnings.filterwarnings("ignore")
-df = pd.read_csv('../input/ign_scores.csv', index_col="Platform")
+df = pd.read_csv('ign_scores.csv', index_col="Platform")
 
 class LoadIGNData(EqualityCheckProblem):
     _var = 'ign_data'

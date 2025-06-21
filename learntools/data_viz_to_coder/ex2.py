@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 from learntools.core import *
 
-df = pd.read_csv('../input/museum_visitors.csv', index_col="Date", parse_dates=True)
+df = pd.read_csv('museum_visitors.csv', index_col="Date", parse_dates=True)
 
 class LoadMuseumData(EqualityCheckProblem):
     _var = 'museum_data'

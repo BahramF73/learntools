@@ -6,12 +6,12 @@ from learntools.core import *
 
 class AttachData(CodingProblem):
     def check(self):
-        assert len(os.listdir('../input')) > 0, \
+        assert len(os.listdir('')) > 0, \
         "Please attach a dataset and run this code cell again to get credit!"  
         
         # check if CSV file attached to notebook
         has_csv = False
-        for dirpath, dirnames, filenames in os.walk('../input'):
+        for dirpath, dirnames, filenames in os.walk(''):
             if any([f.endswith(".csv") for f in filenames]):
                 has_csv = True
                 break

@@ -6,7 +6,7 @@ import warnings
 from learntools.core import *
 
 warnings.filterwarnings("ignore")
-df = pd.read_csv("../input/candy.csv", index_col="id")
+df = pd.read_csv("candy.csv", index_col="id")
 
 class LoadData(EqualityCheckProblem):
     _var = 'candy_data'
