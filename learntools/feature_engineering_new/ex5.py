@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans
 
 from learntools.core import *
 
-df = pd.read_csv("../input/fe-course-data/ames.csv")
+df = pd.read_csv("ames.csv")
 
 
 class Q1(ThoughtExperiment):
