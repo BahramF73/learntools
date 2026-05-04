@@ -74,7 +74,7 @@ class ReadPitchforkSql(EqualityCheckProblem):
     _var = 'music_reviews'
     # TODO: Is loading expected values expensive here? May want to do it on-demand 
     # when check is first called, rather than on import
-    conn = sqlite3.connect("../input/pitchfork-data/database.sqlite")
+    conn = sqlite3.connect("database.sqlite")
     _expected = (
         pd.read_sql_query("SELECT * FROM artists", conn),
     )
@@ -83,7 +83,7 @@ class ReadPitchforkSql(EqualityCheckProblem):
 
     _solution = CS("""\
 import sqlite3
-conn = sqlite3.connect("../input/pitchfork-data/database.sqlite")
+conn = sqlite3.connect("database.sqlite")
 
 music_reviews = pd.read_sql_query("SELECT * FROM artists", conn)""")
 
