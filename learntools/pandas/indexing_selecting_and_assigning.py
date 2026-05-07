@@ -107,6 +107,11 @@ or
 cols_idx = [0, 11]
 df = reviews.iloc[:100, cols_idx]
 ```
+or 
+```python
+cols_idx = [0, -2]
+df = reviews.iloc[:100, cols_idx]
+```
 """
 
 # 8
