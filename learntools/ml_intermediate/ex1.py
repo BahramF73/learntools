@@ -1,6 +1,9 @@
 import os
 import pandas as pd
+from packaging import version
+import sklearn
 from sklearn.ensemble import RandomForestRegressor
+
 
 from learntools.core import *
 
@@ -18,10 +21,16 @@ class BestModel(CodingProblem):
          "`model_3`, `model_4`, or `model_5`.")
 
         params = best_model.get_params()
-        assert params['n_estimators'] == 100 and (params['criterion'] == 'mae' or params['criterion'] == 'absolute_error') \
-        and params['random_state'] == 0, \
-        ("Set the value of `best_model` to one of `model_1`, `model_2`, "
-         "`model_3`, `model_4`, or `model_5`.  Select the model that gets the lowest MAE.")
+        if version.parse(sklearn.__version__)>=version.parse("1.8.0"):
+            assert params['n_estimators'] == 100 and params['max_depth'] == 7 \
+                   and params['random_state'] == 0, \
+                ("Set the value of `best_model` to one of `model_1`, `model_2`, "
+                 "`model_3`, `model_4`, or `model_5`.  Select the model that gets the lowest MAE.")
+        else:
+            assert params['n_estimators'] == 100 and (params['criterion'] == 'mae' or params['criterion'] == 'absolute_error') \
+            and params['random_state'] == 0, \
+            ("Set the value of `best_model` to one of `model_1`, `model_2`, "
+             "`model_3`, `model_4`, or `model_5`.  Select the model that gets the lowest MAE.")
 
 class Predictions(CodingProblem):
     _var = 'my_model'
